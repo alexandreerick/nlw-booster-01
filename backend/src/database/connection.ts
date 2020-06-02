@@ -8,7 +8,8 @@ const connection = knex({
   },
   migrations: {
     directory: path.resolve(__dirname, 'migrations')
-  }
+  },
+  useNullAsDefault: true,
 });
 
 export default connection;
