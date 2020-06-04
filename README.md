@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Ecoleta Next Level Week 👋</h1>
+<h1 align="center">Ecoleta NextLevelWeek 👋</h1>
 <p>
 </p>
 
