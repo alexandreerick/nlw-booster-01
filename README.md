@@ -1,2 +1,19 @@
-# nlw-booster-01
-Projeto da Next Level Week da Rocketseat!
+<h1 align="center">Welcome to Ecoleta Next Level Week 👋</h1>
+<p>
+</p>
+
+> Projeto desenvolvido durante a semana da Next Level Week da Rocketseat
+
+## Author
+
+👤 **Erick Alexandre**
+
+* Website: https://erickalexandre.com
+* Github: [@alexandreerick](https://github.com/alexandreerick)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
