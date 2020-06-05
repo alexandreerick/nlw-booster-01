@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Constants from "expo-constants";
 import {
   View,
@@ -13,9 +13,25 @@ import { useNavigation } from "@react-navigation/native";
 import Emoji from "react-native-emoji";
 import MapView, { Marker } from "react-native-maps";
 import { SvgUri } from "react-native-svg";
+import api from '../../services/api';
+
+interface Items {
+  id: string,
+  name: string,
+  image_url: string,
+}
 
 const Points = () => {
+  const [items, setItems] = useState<Items[]>([])
   const navigation = useNavigation();
+
+  useEffect(() => {
+    api.get('items').then(response => {
+      setItems(response.data);
+    });
+
+
+  }, [])
 
   function handleNavigateBack() {
     navigation.goBack();
@@ -77,35 +93,12 @@ const Points = () => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ paddingHorizontal: 20 }}
         >
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} />
-            <Text style={styles.itemTitle}>Lâmpadas</Text>
-          </TouchableOpacity>
+          {items.map(item => (
+            <TouchableOpacity key={item.id} style={styles.item} onPress={() => {}}>
+              <SvgUri width={42} height={42} uri={item.image_url}/>
+              <Text style={styles.itemTitle}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
         </ScrollView>
       </View>
     </>
