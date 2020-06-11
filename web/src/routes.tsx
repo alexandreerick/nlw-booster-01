@@ -4,10 +4,18 @@ import { Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import CreatePoint from "./pages/CreatePoint";
 
-const Routes = () => {
+interface Props {
+  toggleTheme(): void;
+}
+
+const Routes: React.FC<Props> = ({ toggleTheme }) => {
   return (
     <BrowserRouter>
-      <Route component={Home} path="/" exact />
+      <Route
+        component={() => <Home toggleTheme={toggleTheme} />}
+        path="/"
+        exact
+      />
       <Route component={CreatePoint} path="/create-point" />
     </BrowserRouter>
   );

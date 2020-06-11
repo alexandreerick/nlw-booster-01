@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
+import Switch from "react-switch";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "styled-components";
 
 import "./styles.css";
 
 import logo from "../../assets/logo.svg";
 
-const Home: React.FC = () => {
+interface Props {
+  toggleTheme(): void;
+}
+
+const Home: React.FC<Props> = ({ toggleTheme }) => {
+  const { colors, title } = useContext(ThemeContext);
+
   return (
     <div id="page-home">
       <div className="content">
         <header>
           <img src={logo} alt="Ecoleta"></img>
+          <Switch
+            onChange={toggleTheme}
+            checked={title === "dark"}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            handleDiameter={20}
+            onColor={colors.darkenGray}
+            offColor={colors.theme}
+          />
         </header>
 
         <main>
