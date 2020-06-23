@@ -28,7 +28,7 @@ const Home: React.FC<Props> = ({ toggleTheme }) => {
             height={10}
             width={40}
             handleDiameter={20}
-            onColor={colors.darkenGray}
+            onColor={colors.green}
             offColor={colors.theme}
           />
         </header>

@@ -35,7 +35,7 @@
 
 #page-home .content main h1 {
   font-size: 54px;
-  color: var(--title-color);
+  /* color: var(--title-color); */
 }
 
 #page-home .content main p {
