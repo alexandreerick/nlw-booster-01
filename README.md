@@ -14,6 +14,7 @@
 
 - Website: https://erickalexandre.com
 - Github: [@alexandreerick](https://github.com/alexandreerick)
+- [Linkedin](https://www.linkedin.com/in/erick-alexandre-83007b139/)
 
 ## Show your support
 
